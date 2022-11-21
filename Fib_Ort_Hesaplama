@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace fibonacci_ortalama_hesaplama
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int s1 = 0, s2 = 1, s3 = 0, i;
+            double sayi;
+            Console.Write("Fibonacci sayısını giriniz : ");
+            sayi = int.Parse(Console.ReadLine());
+            if (sayi == 0)
+            {
+                Console.WriteLine(s1);
+                Console.ReadLine();
+            }
+            else if (sayi == 1)
+            {
+                Console.WriteLine(s2);
+                Console.ReadLine();
+            }
+            else if (sayi > 1)
+            {
+                Console.WriteLine(s1);
+                Console.WriteLine(s2);
+                for (i = 2; i < sayi; ++i)
+                {
+                    s3 = s1 + s2;
+                    Console.WriteLine(s3 + " ");
+                    s1 = s2;
+                    s2 = s3;
+
+                }
+            }
+            else
+            {
+                Console.WriteLine("Negatif Sayı Girdiniz Hesaplanamaz");
+            }
+
+
+
+            Console.WriteLine("------------------------");
+            
+            double ort = s3 / sayi;
+            Console.WriteLine("Ortalama = " + ort);
+            Console.ReadLine();
+        }
+    }
+}
